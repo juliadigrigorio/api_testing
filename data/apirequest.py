@@ -23,16 +23,16 @@ class APIRequest:
         url = f"{self.base_url}/{endpoint}/{path}"
         print(url)
         response = requests.get(url, params=params)
-        status_code = response.status_code
-        json_data = response.json()
-        return status_code, json_data
+        # status_code = response.status_code
+        # json_data = response.json()
+        # return status_code, json_data
 
     def post(self, endpoint="", path="", params=None, json=None, headers=None):
         url = f"{self.base_url}/{endpoint}/{path}"
         response = requests.post(url, params=params, json=d.data, headers=self.headers)
-        status_code = response.status_code
-        json_data = response.json()
-        return status_code, json_data
+        # status_code = response.status_code
+        # json_data = response.json()
+        # return status_code, json_data
 
     def put(self, endpoint="", params=None, json=None, headers=None):
         url = f"{self.base_url}/{endpoint}"
