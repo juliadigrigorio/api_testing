@@ -33,7 +33,18 @@ class TestPet:
 class TestStore:
     store = Store()
 
+    @allure.feature("TS_002.03.00   | Returns pet inventories by status")
+    @allure.story("TC_001.02.01.01")
+    def test_return(self):
+        response = self.store.get_return_pet_inventory_by_status()
+
 
 @allure.epic("US_003.00.00 | User > Operations about user")
 class TestUser:
     user = User()
+
+    @allure.feature("TS_003.03.00   | Returns pet inventories by status")
+    @allure.story("TC_001.02.01.01")
+    def test_return(self):
+        response = self.user.post_create_list_users_array()
+
