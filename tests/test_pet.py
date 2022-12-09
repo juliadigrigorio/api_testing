@@ -12,7 +12,8 @@ class TestPet:
     @allure.feature("TS_001.01.00 |  Uploads an image")
     @allure.story("TC_001.01.01")
     def test_same(self):
-        response = self.pet.post_upload_image()
+        status_code, json_data = self.pet.post_upload_image()
+        print(status_code)
 
     @allure.feature("TC_001.02.01  | Add a new pet")
     @allure.story("TC_001.02.01.01")

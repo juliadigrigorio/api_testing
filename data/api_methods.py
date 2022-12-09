@@ -11,7 +11,7 @@ class Pet(APIRequest):
 
     def post_upload_image(self, path=f"{d.random_id}/uploadImage"):
         response = self.post(self.endpoint, path)
-        # return self.get_response_data(response)
+        return self.get_response_data(response)
 
     def post_add_a_new_pet(self):
         response = self.post(self.endpoint)
