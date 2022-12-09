@@ -2,8 +2,8 @@ import string
 import random
 
 
-class Request:
-    headers = {"accept": "application/json", "Content-Type": "application/json"}
+class RequestData:
+
     data = {
         "id": 300,
         "category": {"id": 0, "name": "string"},
@@ -14,11 +14,8 @@ class Request:
     }
     data2 = {"id": 650, "name": "Barsik", "status": "available"}
     update_data = {"name": "Bobik", "status": "sold"}
-    # def randome_name(self):
-    #     self.letters = string.ascii_lowercase
-    #     self.name= "".join(random.choice(self.letters) for _ in range(8))
-    #     return name
-    random_id_avalible = random.randrange(1, 100)
+    randome_name = "".join(random.choice(string.ascii_lowercase) for _ in range(8))
+    random_id = random.randrange(1, 100)
     create_random_id = random.randrange(101, 1000)
     store_data = {
         "id": 0,

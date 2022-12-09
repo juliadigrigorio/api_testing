@@ -1,41 +1,31 @@
 import pytest
+import allure
+from data.api_methods import Pet
 
 
+@allure.epic("US_001.00.00 | Pet > Everything about your Pets")
 class TestPet:
-    @pytest.mark.parametrize("endpoint", ["pet"])
-    def test_same(self, api_client, endpoint):
-        status, json_data = api_client.get(endpoint=endpoint, path=10)
-        assert status == 200
-        print(json_data)
+    pet = Pet()
 
-    @pytest.mark.parametrize("endpoint", ["pet"])
-    def test_same_two(self, api_client, endpoint):
-        status, json_data = api_client.post(endpoint=endpoint)
-        print(status)
-        print(json_data)
+    params = {"status": "sold"}
 
-    def test_same_put(self, api_client):
-        status, json_data = api_client.post()
-        print(status)
-        print(json_data)
+    @allure.feature("TS_001.01.00 |  Uploads an image")
+    @allure.story("TC_001.01.01")
+    def test_same(self):
+        response = self.pet.post_upload_image()
 
-    # @pytest.mark.parametrize("id", Request.random_id)
-    # def test_get_pet_valid_id(self, api_client):
-    #     status, result = api_client.post()
-    #     assert status == 200
+    @allure.feature("TC_001.02.01  | Add a new pet")
+    @allure.story("TC_001.02.01.01")
+    def test(self):
+        response = self.pet.post_add_a_new_pet()
 
-    #
-    # def test_post_add_new_pet(self, path):
-    #     status, result = pet.post_add_new_pet(Request.data, Request.headers)
-    #     assert status == 200
-    #     assert result["name"] == Request.data["name"]
-    #     print(result["name"])
-    #
-    # def test_post_update_pet(self, path):
-    #     status, result = pet.update_pet(id, data=Request.update_data)
-    #     assert status == 200
-    #     status, result = pet.get_pet(id)
-    #     assert result["name"] == Request.update_data["name"]
+    @allure.feature("TC_001.02.02  | Update an existing pet")
+    @allure.story("TC_001.02.01.01")
+    def test_1(self):
+        response = self.pet.put_update_pet()
+
+    def test_2(self, params):
+        response = self.pet.get_find_by_status(params)
 
 
 class TestStore:
