@@ -24,21 +24,16 @@ class TestPet:
     def test_1(self):
         response = self.pet.put_update_pet()
 
-    @pytest.mark.parametrize('params', params)
+    @pytest.mark.parametrize("params", params)
     def test_2(self, params):
         response = self.pet.get_find_by_status(params)
 
 
+@allure.epic("US_002.00.00 | Store > Access to Petstore orders")
 class TestStore:
     store = Store()
-    @pytest.mark.parametrize("endpoint", ["store/order"])
-    def test_sam_store(self, api_client, endpoint):
-        status, json_data = api_client.get(endpoint=endpoint, path=1)
-        assert status == 200
-        print(json_data)
 
 
-#
-#
-# class TestUser(APIClient):
-#     path = "user"
+@allure.epic("US_003.00.00 | User > Operations about user")
+class TestUser:
+    user = User()
