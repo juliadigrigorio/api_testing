@@ -1,13 +1,13 @@
 import pytest
 import allure
-from data.api_methods import Pet
+from data.api_methods import Pet, Store, User
 
 
 @allure.epic("US_001.00.00 | Pet > Everything about your Pets")
 class TestPet:
     pet = Pet()
 
-    params = {"status": "sold"}
+    params = [{"status": "sold"}, {"status": "pending"}, {"status": "available"}]
 
     @allure.feature("TS_001.01.00 |  Uploads an image")
     @allure.story("TC_001.01.01")
@@ -24,11 +24,13 @@ class TestPet:
     def test_1(self):
         response = self.pet.put_update_pet()
 
+    @pytest.mark.parametrize('params', params)
     def test_2(self, params):
         response = self.pet.get_find_by_status(params)
 
 
 class TestStore:
+    store = Store()
     @pytest.mark.parametrize("endpoint", ["store/order"])
     def test_sam_store(self, api_client, endpoint):
         status, json_data = api_client.get(endpoint=endpoint, path=1)

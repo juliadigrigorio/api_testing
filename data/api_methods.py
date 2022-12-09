@@ -5,7 +5,7 @@ from data.api_data import RequestData as d
 class Pet(APIRequest):
     def __init__(self, path=""):
         super().__init__()
-        self.endpoint = 'pet'
+        self.endpoint = "pet"
         self.path = path
         self.response = APIRequest
 
@@ -39,15 +39,28 @@ class Pet(APIRequest):
 
 
 class Store(APIRequest):
-
     def __init__(self, path=""):
         super().__init__()
-        self.endpoint = 'store'
+        self.endpoint = "store"
         self.path = path
         self.response = APIRequest
 
     def post_place_an_order(self, path=f"/order"):
-        response = self.post(path)
+        response = self.post(self.endpoint, path)
 
-    def get_find_order_by_id(self, path=f"/order"):
-        response = self.get(path)
+    def get_find_order_by_id(self, path=f"/order/{d.random_order_id}"):
+        response = self.get(self.endpoint, path)
+
+    def delete_order_by_id(self, path=f"/order/{d.random_order_id}"):
+        response = self.delete(self.endpoint, path)
+
+    def get_return_pet_by_status(self, path=f"/inventory"):
+        response = self.get(self.endpoint, path)
+
+
+class User(APIRequest):
+    def __init__(self, path=""):
+        super().__init__()
+        self.endpoint = "store"
+        self.path = path
+        self.response = APIRequest
