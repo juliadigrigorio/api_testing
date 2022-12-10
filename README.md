@@ -2,7 +2,8 @@ Api-testing project on Python
 
 ---
 # ***Petstore***
----
+
+
 
 [Api documentation]👉
 [<img src="https://github.com/LadyginaElena/API_testing/raw/main/picture/Swagger.jpg" width="200" height="150">](https://petstore.swagger.io/)
@@ -32,8 +33,7 @@ ___
 ##### *Запускает несколько тестов одновременно* 
 
     pytest -n auto OR pytest -n 5( any number)
-    
-⬆️(back to [Menu](#table-of-contents))
+ 
 ___
 # ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
