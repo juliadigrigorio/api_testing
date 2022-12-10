@@ -1,7 +1,6 @@
 import pytest
 import allure
 from data.api_methods import Pet, Store, User
-from data.api_request import Response
 
 
 @allure.epic("US_001.00.00 | Pet > Everything about your Pets")
@@ -22,9 +21,9 @@ class TestPet:
     def test(self):
         response = self.pet.post_add_a_new_pet()
         print(response.status_code)
-        assert 'id' in response.json_data.keys()
-        print(response.json_data['id'])
-        print(response.json_data['name'])
+        assert "id" in response.json_data.keys()
+        print(response.json_data["id"])
+        print(response.json_data["name"])
         print(response.headers)
 
     @allure.feature("TC_001.02.02  | Update an existing pet")
