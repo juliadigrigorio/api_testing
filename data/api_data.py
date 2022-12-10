@@ -3,19 +3,19 @@ import random
 
 
 class RequestData:
-
+    randome_name = "".join(random.choice(string.ascii_lowercase) for _ in range(8))
+    random_id = random.randrange(1, 100)
     data = {
-        "id": 300,
+        "id": random_id,
         "category": {"id": 0, "name": "string"},
-        "name": "dog",
+        "name": randome_name,
         "photoUrls": ["string"],
         "tags": [{"id": 0, "name": "string"}],
         "status": "available",
     }
     data2 = {"id": 650, "name": "Barsik", "status": "available"}
     update_data = {"name": "Bobik", "status": "sold"}
-    randome_name = "".join(random.choice(string.ascii_lowercase) for _ in range(8))
-    random_id = random.randrange(1, 100)
+
     random_order_id = random.randrange(1, 10)
     create_random_id = random.randrange(101, 1000)
     store_data = {

@@ -8,7 +8,7 @@ from data.api_request import Response
 class TestPet:
     pet = Pet()
 
-    params = [{"status": "sold"}, {"status": "pending"}, {"status": "available"}]
+    payload = [{"status": "sold"}, {"status": "pending"}, {"status": "available"}]
 
     @allure.feature("TS_001.01.00 |  Uploads an image")
     @allure.story("TC_001.01.01")
@@ -22,6 +22,7 @@ class TestPet:
     def test(self):
         response = self.pet.post_add_a_new_pet()
         print(response.status_code)
+        assert 'id' in response.json_data.keys()
         print(response.json_data['id'])
         print(response.json_data['name'])
 
@@ -30,7 +31,7 @@ class TestPet:
     def test_1(self):
         response = self.pet.put_update_pet()
 
-    @pytest.mark.parametrize("params", params)
+    @pytest.mark.parametrize("params", payload)
     def test_2(self, params):
         response = self.pet.get_find_by_status(params)
         print(response.status_code)
