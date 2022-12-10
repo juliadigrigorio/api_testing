@@ -21,7 +21,6 @@ class APIRequest:
 
     def get(self, endpoint="", path="", params=None):
         url = f"{self.base_url}/{endpoint}/{path}"
-        print(url)
         response = requests.get(url, params=params)
         return self.get_response_data(response)
 

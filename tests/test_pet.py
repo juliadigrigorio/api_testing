@@ -15,11 +15,14 @@ class TestPet:
     def test_same(self):
         response = self.pet.post_upload_image()
         print(response.status_code)
+        print(response.json_data)
 
     @allure.feature("TC_001.02.01  | Add a new pet")
     @allure.story("TC_001.02.01.01")
     def test(self):
         response = self.pet.post_add_a_new_pet()
+        print(response.status_code)
+        print(response.json_data)
 
     @allure.feature("TC_001.02.02  | Update an existing pet")
     @allure.story("TC_001.02.01.01")
@@ -29,7 +32,8 @@ class TestPet:
     @pytest.mark.parametrize("params", params)
     def test_2(self, params):
         response = self.pet.get_find_by_status(params)
-        print(response[0])
+        print(response.status_code)
+        print(response.json_data)
 
 
 @allure.epic("US_002.00.00 | Store > Access to Petstore orders")
