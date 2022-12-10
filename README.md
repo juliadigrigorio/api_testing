@@ -6,7 +6,7 @@ Api-testing project on Python
 ---
 
 [Api documentation]👉
-[<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="120" height="120">](https://petstore.swagger.io/)
+[<img src="https://github.com/LadyginaElena/API_testing/tree/main/picture" width="120" height="120">](https://petstore.swagger.io/)
 [OUR]👉
 [<img src="https://logosmarken.com/wp-content/uploads/2021/03/Trello-Logo-650x366.png" alt='Trello' width="115" height="70">](https://trello.com/b/6n6e0r1L/psevdokodapip)
 
