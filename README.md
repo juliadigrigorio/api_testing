@@ -122,17 +122,8 @@ ___
 ___
 # Useful links <a name="some-links"></a>
 
-👉[Установка Black](https://pypi.org/project/black/)
-
-👉[Установка Flake8](https://flake8.pycqa.org/en/latest/index.html#quickstart)
-
-👉[About SELENIUM](https://selenium-python.readthedocs.io/)
-
-👉[About SELENIUM.2](https://www.selenium.dev/documentation/)
-
-👉[About Python](https://www.python.org/)
-
-👉[Allure-combine](https://pypi.org/project/allure-combine/)
-
-
-⬆️ <sup>(back to [Menu](#table-of-contents))</sup>
+[![Python](https://img.shields.io/badge/-Python-464646?style=flat-square&logo=Python)](https://www.python.org/)
+[![Pytest](https://img.shields.io/badge/-pytest-464646?style=flat-square&logo=pytest)](https://docs.pytest.org/en/7.1.x/contents.html)
+[![Allure](https://img.shields.io/badge/-Allure-464646?style=flat-square&logo=Allure)](http://allure.qatools.ru/)
+[![GitHub%20Actions](https://img.shields.io/badge/-GitHub%20Actions-464646?style=flat-square&logo=GitHub%20actions)](https://github.com/features/actions/)
+[![GitHub%20Pages](https://img.shields.io/badge/-GitHub%20Pages-464646?style=flat-square&logo=GitHub%20Pages)](https://pages.github.com/)
