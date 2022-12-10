@@ -1,6 +1,7 @@
 import pytest
 import allure
 from data.api_methods import Pet, Store, User
+from data.api_request import Response
 
 
 @allure.epic("US_001.00.00 | Pet > Everything about your Pets")
@@ -13,7 +14,6 @@ class TestPet:
     @allure.story("TC_001.01.01")
     def test_same(self):
         response = self.pet.post_upload_image()
-        print(response.json_data)
 
     @allure.feature("TC_001.02.01  | Add a new pet")
     @allure.story("TC_001.02.01.01")

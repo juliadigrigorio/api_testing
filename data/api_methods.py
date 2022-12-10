@@ -1,4 +1,4 @@
-from data.apirequest import APIRequest
+from data.api_request import APIRequest
 from data.api_data import RequestData as d
 
 
@@ -7,7 +7,7 @@ class Pet(APIRequest):
         super().__init__()
         self.endpoint = "pet"
         self.path = path
-        self.response = APIRequest
+        self.response = APIRequest()
 
     def post_upload_image(self, path=f"{d.random_id}/uploadImage"):
         response = self.post(self.endpoint, path)
@@ -43,7 +43,7 @@ class Store(APIRequest):
         super().__init__()
         self.endpoint = "store"
         self.path = path
-        self.response = APIRequest
+        self.response = APIRequest()
 
     def post_place_an_order(self, path=f"/order"):
         response = self.post(self.endpoint, path)
@@ -63,7 +63,7 @@ class User(APIRequest):
         super().__init__()
         self.endpoint = "user"
         self.path = path
-        self.response = APIRequest
+        self.response = APIRequest()
 
     def post_create_list_users_array(self, path='createWithArray'):
         response = self.get(self.endpoint, path)
