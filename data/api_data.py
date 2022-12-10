@@ -2,24 +2,22 @@ import string
 import random
 
 
-class Request:
-    headers = {"accept": "application/json", "Content-Type": "application/json"}
+class RequestData:
+    random_name = "".join(random.choice(string.ascii_lowercase) for _ in range(8))
+    random_id = random.randrange(1, 100)
+    random_order_id = random.randrange(1, 10)
+    create_random_id = random.randrange(101, 1000)
     data = {
-        "id": 300,
+        "id": random_id,
         "category": {"id": 0, "name": "string"},
-        "name": "dog",
+        "name": random_name,
         "photoUrls": ["string"],
         "tags": [{"id": 0, "name": "string"}],
         "status": "available",
     }
     data2 = {"id": 650, "name": "Barsik", "status": "available"}
     update_data = {"name": "Bobik", "status": "sold"}
-    # def randome_name(self):
-    #     self.letters = string.ascii_lowercase
-    #     self.name= "".join(random.choice(self.letters) for _ in range(8))
-    #     return name
-    random_id_avalible = random.randrange(1, 100)
-    create_random_id = random.randrange(101, 1000)
+
     store_data = {
         "id": 0,
         "petId": 0,
