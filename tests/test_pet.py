@@ -22,7 +22,8 @@ class TestPet:
     def test(self):
         response = self.pet.post_add_a_new_pet()
         print(response.status_code)
-        print(response.json_data)
+        print(response.json_data['id'])
+        print(response.json_data['name'])
 
     @allure.feature("TC_001.02.02  | Update an existing pet")
     @allure.story("TC_001.02.01.01")
