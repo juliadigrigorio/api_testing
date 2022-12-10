@@ -1,6 +1,7 @@
 import pytest
 import allure
 from data.api_methods import Pet, Store, User
+from data.api_request import Response
 
 
 @allure.epic("US_001.00.00 | Pet > Everything about your Pets")
@@ -12,8 +13,8 @@ class TestPet:
     @allure.feature("TS_001.01.00 |  Uploads an image")
     @allure.story("TC_001.01.01")
     def test_same(self):
-        status_code, json_data = self.pet.post_upload_image()
-        print(status_code)
+        response = self.pet.post_upload_image()
+        print(response.status_code)
 
     @allure.feature("TC_001.02.01  | Add a new pet")
     @allure.story("TC_001.02.01.01")
@@ -28,6 +29,7 @@ class TestPet:
     @pytest.mark.parametrize("params", params)
     def test_2(self, params):
         response = self.pet.get_find_by_status(params)
+        print(response[0])
 
 
 @allure.epic("US_002.00.00 | Store > Access to Petstore orders")
@@ -48,4 +50,3 @@ class TestUser:
     @allure.story("TC_001.02.01.01")
     def test_return(self):
         response = self.user.post_create_list_users_array()
-
