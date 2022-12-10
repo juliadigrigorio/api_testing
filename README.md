@@ -13,11 +13,8 @@ Api-testing project on Python
 # Table of contents
 - [Как работать с репозиторием?](#some-inst)
 - [Pytest INFO](#some-pytest)
-- [Poetry](#some-poetry)
-- [Python html report](#some-html)
 - [Allure](#some-allure)
-- [Creat Allure single HTML file builder](#some-allure-html-file)
-- [Useful links](#some-links)
+
 ___
 
 # **Как работать с репозиторием?:** <a name="some-inst"></a>
