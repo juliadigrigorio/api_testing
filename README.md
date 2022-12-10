@@ -1,21 +1,21 @@
 Api-testing project on Python
 
 ---
-# **# Swagger Petstore**
+#  Swagger Petstore
 
 [Api documentation]👉
 [<img src="https://github.com/LadyginaElena/API_testing/raw/main/picture/Swagger.jpg" width="200" height="150">](https://petstore.swagger.io/)
 [OUR]👉
 [<img src="https://logosmarken.com/wp-content/uploads/2021/03/Trello-Logo-650x366.png" alt='Trello' width="115" height="70">](https://trello.com/b/6n6e0r1L/psevdokodapip)
 
-# Table of contents
+## Table of contents
 - [Pytest INFO](#some-pytest)
 - [Allure](#some-allure)
 
 ___
 
 
-# Pytest INFO:<a name="some-pytest"></a> [![pytest](https://img.shields.io/badge/pytest-website-brightgreen.svg?style=flat-square)](https://docs.pytest.org/en/7.2.x/)
+## Pytest INFO:<a name="some-pytest"></a> [![pytest](https://img.shields.io/badge/pytest-website-brightgreen.svg?style=flat-square)](https://docs.pytest.org/en/7.2.x/)
 
 > ***Do not forget check your tests with black and flake8 before pushing***
 
@@ -33,7 +33,7 @@ ___
     pytest -n auto OR pytest -n 5( any number)
  
 ___
-# ALLURE <a name="some-allure"></a>
+## ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
 
 ### ***Installation:***
