@@ -23,30 +23,22 @@ class APIRequest:
         url = f"{self.base_url}/{endpoint}/{path}"
         print(url)
         response = requests.get(url, params=params)
-        # status_code = response.status_code
-        # json_data = response.json()
-        # return status_code, json_data
+        return self.get_response_data(response)
 
     def post(self, endpoint="", path="", params=None, json=None, headers=None):
         url = f"{self.base_url}/{endpoint}/{path}"
         response = requests.post(url, params=params, json=d.data, headers=self.headers)
-        # status_code = response.status_code
-        # json_data = response.json()
-        # return status_code, json_data
+        return self.get_response_data(response)
 
     def put(self, endpoint="", params=None, json=None, headers=None):
         url = f"{self.base_url}/{endpoint}"
         response = requests.post(url, params=params, json=d.data2, headers=self.headers)
-        status_code = response.status_code
-        json_data = response.json()
-        return status_code, json_data
+        return self.get_response_data(response)
 
     def delete(self, endpoint="", path="", params=None, json=None, headers=None):
         url = f"{self.base_url}/{endpoint}/{path}"
         response = requests.post(url, params=params, json=d.data, headers=self.headers)
-        status_code = response.status_code
-        json_data = response.json()
-        return status_code, json_data
+        return self.get_response_data(response)
 
     def get_response_data(self, response):
         status_code = response.status_code
@@ -54,6 +46,7 @@ class APIRequest:
         headers = response.headers
         text = response.text
         return Response(status_code, json_data, headers, text)
+
 
 # @pytest.fixture
 # def api_client():

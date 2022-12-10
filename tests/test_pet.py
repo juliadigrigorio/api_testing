@@ -14,6 +14,7 @@ class TestPet:
     @allure.story("TC_001.01.01")
     def test_same(self):
         response = self.pet.post_upload_image()
+        print(response.status_code)
 
     @allure.feature("TC_001.02.01  | Add a new pet")
     @allure.story("TC_001.02.01.01")
@@ -28,6 +29,7 @@ class TestPet:
     @pytest.mark.parametrize("params", params)
     def test_2(self, params):
         response = self.pet.get_find_by_status(params)
+        print(response[0])
 
 
 @allure.epic("US_002.00.00 | Store > Access to Petstore orders")
