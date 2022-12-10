@@ -1,9 +1,7 @@
 Api-testing project on Python
 
 ---
-# ***Petstore***
-
-
+# **# Swagger Petstore**
 
 [Api documentation]👉
 [<img src="https://github.com/LadyginaElena/API_testing/raw/main/picture/Swagger.jpg" width="200" height="150">](https://petstore.swagger.io/)
@@ -40,21 +38,21 @@ ___
 
 ### ***Installation:***
     pip install allure-pytest
-    pip install allure-commonse
+    pip install allure-python-commons
   
 ### ***1. Create allure:***
   
 ###### Соберёт отчеты по всем тестам:
   
-    pytest --alluredir=allure
+    pytest alluredir=allure-results
   
-###### Соберёт отчет по  указанному тесту:
+###### Соберёт отчет по указанному тесту:
   
-    pytest имя теста --alluredir=allure
+    pytest имя теста alluredir=allure-results
   
 ### ***2. Generates a report and opens it in a browser::***
      
-    allure serve allure
+    allure serve allure-results
       
 ### ***3. Report generated for allure-report:***
   
