@@ -1,4 +1,4 @@
-Api-testing project on Python
+Automation REST API testing project on Python
 
 ---
 #  Swagger Petstore
