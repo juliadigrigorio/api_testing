@@ -2,7 +2,6 @@ Api-testing project on Python
 
 ---
 # ***Petstore***
-
 ---
 
 [Api documentation]👉
