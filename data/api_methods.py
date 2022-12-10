@@ -64,13 +64,13 @@ class User(APIRequest):
     def post_create_list_users_list(self, path="createWithList"):
         return self.get(self.endpoint, path)
 
-    def get_user_by_username(self, path=f"{d.randome_name}"):
+    def get_user_by_username(self, path=f"{d.random_name}"):
         return self.get(self.endpoint, path)
 
-    def put_user_by_username(self, path=f"{d.randome_name}"):
+    def put_user_by_username(self, path=f"{d.random_name}"):
         return self.put(self.endpoint, path)
 
-    def delete_user_by_username(self, path=f"{d.randome_name}"):
+    def delete_user_by_username(self, path=f"{d.random_name}"):
         return self.delete(self.endpoint, path)
 
     def get_logs_user(self, path="login"):

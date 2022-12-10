@@ -25,6 +25,7 @@ class TestPet:
         assert 'id' in response.json_data.keys()
         print(response.json_data['id'])
         print(response.json_data['name'])
+        print(response.headers)
 
     @allure.feature("TC_001.02.02  | Update an existing pet")
     @allure.story("TC_001.02.01.01")
@@ -52,7 +53,7 @@ class TestStore:
 class TestUser:
     user = User()
 
-    @allure.feature("TS_003.03.00   | Returns pet inventories by status")
+    @allure.feature("TS_003.03.00   | ")
     @allure.story("TC_001.02.01.01")
     def test_return(self):
         response = self.user.post_create_list_users_array()
