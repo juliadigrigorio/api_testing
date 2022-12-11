@@ -1,13 +1,12 @@
 import pytest
 import allure
 from data.api_methods import Pet, Store, User
+from data.api_data import RequestData as d
 
 
 @allure.epic("US_001.00.00 | Pet > Everything about your Pets")
 class TestPet:
     pet = Pet()
-
-    payload = [{"status": "sold"}, {"status": "pending"}, {"status": "available"}]
 
     @allure.feature("TS_001.01.00 |  Uploads an image")
     @allure.story("TC_001.01.01")
@@ -26,16 +25,30 @@ class TestPet:
         print(response.json_data["name"])
         print(response.headers)
 
+    def test_create_update_delete(self):
+        response = self.pet.post_add_a_new_pet()
+        pet_id = response.json_data["id"]
+        name = response.json_data["name"]
+        json = {"id": pet_id, "name": "Barsik", "status": "available"}
+        response = self.pet.put_update_pet(json)
+        new_name = response.json_data["name"]
+        response = self.pet.get_find_pet_by_id(path=pet_id)
+        assert name != new_name
+        response = self.pet.delete_pet_by_id(path=pet_id)
+        response = self.pet.get_find_pet_by_id(path=pet_id)
+        assert response.status_code == 404
+        print(response.json_data.get("message"))
+
     @allure.feature("TC_001.02.02  | Update an existing pet")
     @allure.story("TC_001.02.01.01")
     def test_1(self):
-        response = self.pet.put_update_pet()
+        response = self.pet.put_update_pet(json=d.data2)
 
-    @pytest.mark.parametrize("params", payload)
-    def test_2(self, params):
-        response = self.pet.get_find_by_status(params)
+    # @pytest.mark.parametrize("params")
+    def test_2(self):
+        response = self.pet.get_find_by_status()
         print(response.status_code)
-        print(response.json_data)
+        print(response.text)
 
 
 @allure.epic("US_002.00.00 | Store > Access to Petstore orders")
@@ -46,6 +59,8 @@ class TestStore:
     @allure.story("TC_001.02.01.01")
     def test_return(self):
         response = self.store.get_return_pet_inventory_by_status()
+        available = response.json_data['available']
+        print(f'Found {available} available pets')
 
 
 @allure.epic("US_003.00.00 | User > Operations about user")

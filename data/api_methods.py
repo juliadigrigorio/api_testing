@@ -9,17 +9,27 @@ class Pet(APIRequest):
         self.path = path
         self.response = APIRequest()
 
-    def post_upload_image(self, path=f"{d.random_id}/uploadImage"):
-        return self.post(self.endpoint, path)
+    # def setup(self):
+    #     payload = [
+    #         ({"status": "sold"}),
+    #         ({"status": "pending"}),
+    #         ({"status": "available"}),
+    #     ]
+    params = {"status": "sold"}
+
+    def post_upload_image(
+        self, path=f"{d.random_id}/uploadImage", json=str(d.upload_data)
+    ):
+        return self.post(self.endpoint, path, json)
 
     def post_add_a_new_pet(self):
         return self.post(self.endpoint)
 
-    def put_update_pet(self):
-        return self.put(self.endpoint)
+    def put_update_pet(self, json):
+        return self.put(self.endpoint, json)
 
-    def get_find_by_status(self, path="/findByStatus"):
-        return self.get(self.endpoint, path)
+    def get_find_by_status(self, path="findByStatus", params=params):
+        return self.get(self.endpoint, path, params)
 
     def get_find_pet_by_id(self, path=f"/{d.random_id}"):
         return self.get(self.endpoint, path)
