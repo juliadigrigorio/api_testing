@@ -19,14 +19,14 @@ class APIRequest:
             "Content-Type": "application/json",
         }
 
-    def get(self, endpoint="", path="", params=None):
+    def get(self, endpoint="", path="", params=None, headers=None):
         url = f"{self.base_url}/{endpoint}/{path}"
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params, headers=self.headers)
         return self.get_response_data(response)
 
-    def post(self, endpoint="", path="", params=None, json=None, headers=None):
+    def post(self, endpoint="", path="", json=None, headers=None):
         url = f"{self.base_url}/{endpoint}/{path}"
-        response = requests.post(url, params=params, json=d.data, headers=self.headers)
+        response = requests.post(url, json=d.data, headers=self.headers)
         return self.get_response_data(response)
 
     def put(self, endpoint="", params=None, json=None, headers=None):
@@ -36,7 +36,7 @@ class APIRequest:
 
     def delete(self, endpoint="", path="", params=None, json=None, headers=None):
         url = f"{self.base_url}/{endpoint}/{path}"
-        response = requests.post(url, params=params, json=d.data, headers=self.headers)
+        response = requests.delete(url, params=params, json=d.data, headers=self.headers)
         return self.get_response_data(response)
 
     def get_response_data(self, response):
