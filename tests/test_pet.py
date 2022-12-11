@@ -59,7 +59,8 @@ class TestStore:
     @allure.story("TC_001.02.01.01")
     def test_return(self):
         response = self.store.get_return_pet_inventory_by_status()
-        print(response.text)
+        available = response.json_data['available']
+        print(f'Found {available} available pets')
 
 
 @allure.epic("US_003.00.00 | User > Operations about user")
