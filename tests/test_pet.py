@@ -29,7 +29,8 @@ class TestPet:
         response = self.pet.post_add_a_new_pet()
         pet_id = response.json_data["id"]
         name = response.json_data["name"]
-        json = {"id": pet_id, "name": "Barsik", "status": "available"}
+        json = d.data2
+        json['id'] = pet_id
         response = self.pet.put_update_pet(json)
         new_name = response.json_data["name"]
         response = self.pet.get_find_pet_by_id(path=pet_id)

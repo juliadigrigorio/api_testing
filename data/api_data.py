@@ -15,6 +15,10 @@ class RequestData:
         "tags": [{"id": 0, "name": "string"}],
         "status": "available",
     }
+
+    def put_data(self):
+        return {"id": 650, "name": "Barsik", "status": "available"}
+
     data2 = {"id": 650, "name": "Barsik", "status": "available"}
     update_data = {"name": "Bobik", "status": "sold"}
     upload_data = {"additionalMetadata": "xml"}
