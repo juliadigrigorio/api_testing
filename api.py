@@ -52,6 +52,6 @@ class Requests:
         elif method == "DELETE":
             response = requests.delete(url, data = data, headers=headers, cookies=cookies)
         else:
-            raise Exception(f"Bad method '{method}'")
+            raise Exception(f"Very bad method '{method}'")
 
         return response
